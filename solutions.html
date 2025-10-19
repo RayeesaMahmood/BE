@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bizzapt Enterprises | Our Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .tech-bg {
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 text-white px-4 md:px-6 py-4 shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="https://i.postimg.cc/C1jQPkzC/bizzapt-1.png" alt="Bizzapt Logo" class="h-10 w-10 rounded-full shadow-lg">
+                <span class="text-xl md:text-2xl font-bold font-serif tracking-wide">Bizzapt Enterprises</span>
+            </div>
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-gray-400 transition">Home</a>
+                <a href="services.html" target="_blank" class="hover:text-gray-400 transition">Services</a>
+                <a href="solutions.html" class="hover:text-gray-400 transition">Solutions</a>
+                <a href="contactus.html" target="_blank" class="hover:text-gray-400 transition">Contact Us</a>
+                <button onclick="toggleLanguage()" class="hover:text-gray-400 transition">عربي</button>
+            </div>
+            <!-- Mobile Nav Toggle -->
+            <div class="md:hidden">
+                <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Open Menu">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Nav -->
+        <div id="mobileMenu" class="md:hidden hidden mt-2 bg-gray-800 rounded-lg shadow-lg">
+            <a href="index.html" class="block px-4 py-2 hover:bg-gray-700 transition">Home</a>
+            <a href="services.html" target="_blank" class="block px-4 py-2 hover:bg-gray-700 transition">Services</a>
+            <a href="solutions.html" class="block px-4 py-2 hover:bg-gray-700 transition">Solutions</a>
+            <a href="contactus.html" target="_blank" class="block px-4 py-2 hover:bg-gray-700 transition">Contact Us</a>
+            <button onclick="toggleLanguage()" class="block w-full text-left px-4 py-2 hover:bg-gray-700 transition">عربي</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-28 px-4 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold text-blue-700">Our Solutions</h1>
+        <p class="mt-2 text-gray-600 text-base md:text-lg">Innovative & Future-Ready Solutions</p>
+    </section>
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto my-4 px-4 md:px-6">
+        <p class="text-xs md:text-sm text-gray-500">Home / Our Solutions</p>
+    </div>
+
+    <!-- Solutions Cards -->
+    <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-6 py-8 md:py-10">
+        <!-- Card 1 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://tinyurl.com/2a45c9h2');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">System, Storage, and Cloud Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Helping clients adapt to business needs faster and more securely.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Infrastructure Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Comprehensive IT infrastructure from start to finish.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Data Center Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Experts in next-gen data center design & implementation.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Network Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Comprehensive & secure networking solutions for your enterprise.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Virtualization Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Efficiently run multiple operating systems on a single machine.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Enterprise Integration Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Connecting systems to work seamlessly as one.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 7 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://tinyurl.com/yyfhha4n');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Cybersecurity</h2>
+                <p class="text-gray-200 text-sm mt-2">Protecting digital systems, networks, and data from threats.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10 mt-8">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+            <div>
+                <h4 class="font-bold mb-4 text-lg">Bizzapt Enterprises</h4>
+                <p class="text-gray-300">Line of Provision</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-lg">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="solutions.html" class="hover:text-gray-300">Solutions</a></li>
+                    <li><a href="careers.html" class="hover:text-gray-300">Careers</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Blogs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-lg">Contact Us</h4>
+                <p>Riyadh & Hyderabad</p>
+                <p>info@bizzapt.com</p>
+                <p>+966 114 020 500</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-lg">Location</h4>
+                <div class="w-full h-32 bg-gray-700 rounded-lg"></div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-6 pt-4 text-center text-xs text-gray-400">
+            &copy; 2025 Bizzapt Enterprises. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Optional: Close mobile menu on outside click
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const button = menu.previousElementSibling.querySelector('button');
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+        // Dummy language toggle
+        function toggleLanguage() {
+            alert('Language switch coming soon!');
+        }
+    </script>
+</body>
+</html>

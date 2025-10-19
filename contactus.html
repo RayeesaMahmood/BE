@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Bizzapt Enterprises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #e8ebf1);
+        }
+        .fade-slide {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeSlide 1s forwards;
+        }
+        .fade-slide:nth-child(1) { animation-delay: 0.2s; }
+        .fade-slide:nth-child(2) { animation-delay: 0.4s; }
+        @keyframes fadeSlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<!-- Navbar -->
+<nav class="bg-gray-900 text-white px-4 sm:px-8 py-4 shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img src="https://i.postimg.cc/1R8SghtK/Whats-App-Image-2025-07-18-at-22-44-21-29c01807.jpg" alt="Bizzapt Logo" class="h-10 rounded-md">
+            <span class="text-white font-bold text-lg">Bizzapt Enterprises</span>
+        </div>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+            <a href="index.html" class="hover:text-gray-400">Home</a>
+            <a href="about.html" class="hover:text-gray-400">About Us</a>
+            <a href="services.html" class="hover:text-gray-400">Services</a>
+            <a href="solutions.html" class="hover:text-gray-400">Solutions</a>
+            <a href="careers.html" class="hover:text-gray-400">Career</a>
+            <a href="contact.html" class="hover:text-gray-400">Contact Us</a>
+        </div>
+        <!-- Mobile Hamburger -->
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pt-4 pb-2 bg-gray-900">
+        <a href="index.html" class="block py-2 hover:text-gray-400">Home</a>
+        <a href="about.html" class="block py-2 hover:text-gray-400">About Us</a>
+        <a href="services.html" class="block py-2 hover:text-gray-400">Services</a>
+        <a href="solutions.html" class="block py-2 hover:text-gray-400">Solutions</a>
+        <a href="careers.html" class="block py-2 hover:text-gray-400">Career</a>
+        <a href="contact.html" class="block py-2 hover:text-gray-400">Contact Us</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-28 pb-10 text-center px-4">
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 fade-slide">Contact Us</h1>
+    <p class="mt-4 text-gray-500 fade-slide text-base sm:text-lg">We are here to help you grow your business with confidence.</p>
+</section>
+
+<!-- Contact Section -->
+<section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4 sm:px-8 py-10 sm:py-20">
+    <!-- Contact Info -->
+    <div class="fade-slide space-y-8">
+        <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 leading-tight">Let's Connect</h2>
+        <p class="text-gray-600 text-base sm:text-lg">Have questions? Reach out to us and our team will assist you promptly.</p>
+        <div class="space-y-4 text-gray-700 text-base sm:text-lg">
+            <p><strong>📍 Location:</strong> Riyadh, KSA</p>
+            <p><strong>📧 Email:</strong> info@bizzapt.com</p>
+            <p><strong>📞 Phone:</strong> +966 000 000 000</p>
+            <p><strong>🕒 Working Hours:</strong> Sun - Thu | 8:00 AM - 4:00 PM</p>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="glass rounded-xl shadow-2xl p-6 sm:p-10 fade-slide">
+        <h3 class="text-xl sm:text-2xl font-bold mb-6 text-gray-800">Send Us a Message</h3>
+        <form action="submit_form.php" method="POST" class="space-y-5">
+            <div>
+                <label for="name" class="block text-gray-700 font-medium mb-1">Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+                <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+                <input type="text" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+                <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+                <label for="subject" class="block text-gray-700 font-medium mb-1">Subject</label>
+                <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+                <label for="message" class="block text-gray-700 font-medium mb-1">Message</label>
+                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        <div>
+            <h4 class="font-bold mb-4 text-lg">Bizzapt Enterprises</h4>
+            <p class="text-gray-300">Line of Provision</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4 text-lg">Quick Links</h4>
+            <ul class="space-y-2">
+                <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+                <li><a href="solutions.html" class="hover:text-gray-300">Solutions</a></li>
+                <li><a href="careers.html" class="hover:text-gray-300">Careers</a></li>
+                <li><a href="#" class="hover:text-gray-300">Blogs</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4 text-lg">Contact Us</h4>
+            <p>Riyadh & Hyderabad</p>
+            <p>info@bizzapt.com</p>
+            <p>+966 000 00 000</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4 text-lg">Location</h4>
+            <div class="w-full h-32 bg-gray-700 rounded-lg"></div>
+        </div>
+    </div>
+    <div class="border-t border-gray-700 mt-6 pt-4 text-center text-xs text-gray-400">
+        &copy; 2025 Bizzapt Enterprises. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    // Hamburger menu toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

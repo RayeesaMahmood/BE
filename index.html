@@ -3,286 +3,767 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bizzapt Enterprises | Line Of Provisions</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --saudi-green: #066132;
-        }
-        .bg-saudi-green {
-            background-color: var(--saudi-green);
-        }
-        .text-saudi-green {
-            color: var(--saudi-green);
-        }
-        .hover\:bg-saudi-green:hover {
-            background-color: var(--saudi-green);
-        }
-        .hover\:text-saudi-green:hover {
-            color: var(--saudi-green);
-        }
-    </style>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bizzapt Enterprises | Line Of Provisions</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+@font-face {
+    font-family: 'Racing Sans One';
+    src: url('fonts/RacingSansOne.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Racing Sans One', sans-serif;
+}
+</style>
 </head>
-<body>  
-    <!-- New Navigation Bar -->
-    <nav class="bg-green-800 shadow-lg">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <img src="file:///C:/Users/DELL/Pictures/Screenshots/Screenshot%20(46).png" alt="Bizzapt Logo" class="h-10 w-10 mr-3">
-                    <div class="text-2xl font-bold text-white">Bizzapt Enterprises</div>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-white font-semibold hover:text-gray-300 transition duration-300">Home</a>
-                    <div class="relative group">
-                        <a href="#services" class="text-white font-semibold hover:text-gray-300 transition duration-300">Services</a>
-                        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg hidden group-hover:block">
-                            <a href="#cybersecurity" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cybersecurity</a>
-                            <a href="#cloud" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cloud Solutions</a>
-                            <a href="#iot" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">IoT Solutions</a>
-                        </div>
-                    </div>
-                    <a href="#careers" class="text-white font-semibold hover:text-gray-300 transition duration-300">Careers</a>
-                    <a href="#contact" class="text-white font-semibold hover:text-gray-300 transition duration-300">Contact</a>
-                    <button class="text-white font-semibold hover:text-gray-300 transition duration-300" onclick="toggleLanguage()">عربي</button>
-                </div>
-                <div class="md:hidden">
-                    <button onclick="toggleMenu()" class="text-white">
-                        <i class="bi bi-list text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-green-900">Home</a>
-                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-green-900">Services</a>
-                <a href="#careers" class="block px-3 py-2 text-gray-700 hover:text-green-900">Careers</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-green-900">Contact</a>
-                <button class="block w-full text-left px-3 py-2 text-gray-700 hover:text-green-900" onclick="toggleLanguage()">عربي</button>
-            </div>
-        </div>
-    </nav>
-    
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-green-900">Home</a>
-                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-green-900">Services</a>
-                <a href="#careers" class="block px-3 py-2 text-gray-700 hover:text-green-900">Careers</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-green-900">Contact</a>
-                <button class="block w-full text-left px-3 py-2 text-gray-700 hover:text-green-900" onclick="toggleLanguage()">عربي</button>
-            </div>
-        </div>
-    </nav>
+<body>
 
-<!-- Hero Section -->
-<section id="home" class="relative h-screen flex items-center">
-    <!-- Video Background -->
-    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
-        <source src="https://www.pexels.com/download/video/19102792/" type="video/mp4">
-      
-    </video>
-        <!-- Black Overlay -->
+  <!-- 🚗 Preloader (paste this at the top of <body>) -->
+<div class="preloader" id="preloader">
+  <style>
+    .preloader {
+      position: fixed;
+      inset: 0;
+    background: linear-gradient(90deg, #000000 0%, #100163 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    .logo-car {
+      width: 620px; /* adjust size */
+      height: auto;
+      animation: carRide 4s ease-in-out forwards;
+    }
+    @keyframes carRide {
+      0%   { transform: translateX(-120%); opacity: 0; }
+      20%  { transform: translateX(0); opacity: 1; }
+      30%  { transform: translateX(0); opacity: 1; } /* pause */
+      100% { transform: translateX(120%); opacity: 0; }
+    }
+  </style>
+
+  <!-- Replace logo.png with your logo -->
+<img src="https://i.postimg.cc/C1jQPkzC/bizzapt-1.png" alt="Logo" class="logo-car" style="border-radius: 50%;">
+
+  <script>
+    const preloader = document.getElementById("preloader");
+    // Match duration with animation (4s = 4000ms)
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 4000);
+  </script>
+</div>
+
+<!-- === Almarai-inspired Enhancement Kit (scoped, non-destructive) === -->
+<div id="aem-enhancer">
+  <style>
+    :root {
+      --aem-ease: cubic-bezier(.2,.9,.2,1);
+      --aem-duration: 600ms;
+      --aem-accent: #0b6a4a;
+    }
+
+    /* Skip link (accessibility) */
+    .aem-skip {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .aem-skip:focus {
+      left: 12px;
+      top: 12px;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: white;
+      border: 2px solid #333;
+      z-index: 99999;
+      border-radius: 6px;
+    }
+
+    /* Sticky nav helper (applies if a <nav> is present) */
+    nav.aem-sticky {
+      transition: box-shadow 300ms var(--aem-ease), background-color 300ms var(--aem-ease);
+    }
+    nav.aem-sticky.aem-is-stuck {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9998;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      background: rgba(17,24,39,0.98); /* dark with slight transparency */
+      backdrop-filter: blur(4px);
+    }
+
+    /* Reveal on scroll (default hidden state) */
+    .aem-reveal {
+      opacity: 0;
+      transform: translateY(18px) scale(0.995);
+      transition: opacity var(--aem-duration) var(--aem-ease), transform var(--aem-duration) var(--aem-ease);
+      will-change: transform, opacity;
+    }
+    .aem-reveal.aem-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Product card hover overlay */
+    .aem-card-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 1rem;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 260ms var(--aem-ease), transform 260ms var(--aem-ease);
+    }
+    .aem-card-overlay .aem-cta {
+      pointer-events: auto;
+      background: var(--aem-accent);
+      color: #fff;
+      padding: .45rem .9rem;
+      border-radius: 28px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 12px rgba(11,106,74,0.18);
+      font-size: 0.95rem;
+    }
+    .aem-card-wrap { position: relative; overflow: hidden; border-radius: 10px; }
+    .aem-card-wrap:hover .aem-card-overlay,
+    .aem-card-wrap:focus-within .aem-card-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Image blur-up placeholder */
+    .aem-blur {
+      filter: blur(8px) saturate(.95);
+      transform: scale(1.03);
+      transition: filter 500ms var(--aem-ease), transform 500ms var(--aem-ease);
+    }
+    .aem-blur.aem-sharp {
+      filter: blur(0px) saturate(1);
+      transform: scale(1);
+    }
+
+    /* Logo entrance (car-like) - applies if nav logo found */
+    .aem-logo-entrance {
+      display: inline-block;
+      will-change: transform, opacity;
+      animation: aemLogoIn 2000ms cubic-bezier(.25,.9,.35,1) forwards;
+    }
+    @keyframes aemLogoIn {
+      0%   { transform: translateX(-160%) rotate(-8deg) scale(.9); opacity: 0; }
+      40%  { transform: translateX(0) rotate(0) scale(1.04); opacity: 1; }
+      70%  { transform: translateX(0) rotate(0) scale(1); opacity: 1; }
+      100% { transform: translateX(140%) rotate(8deg) scale(.95); opacity: 0; }
+    }
+
+    /* Hero subtle parallax */
+    .aem-hero-parallax {
+      will-change: transform;
+    }
+
+    /* Reduced motion small-handling */
+    @media (prefers-reduced-motion: reduce) {
+      .aem-logo-entrance, .aem-reveal, .aem-hero-parallax { animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; }
+    }
+
+    /* Responsive tweaks (small screens) */
+    @media (max-width: 720px) {
+      .aem-card-overlay { padding: .6rem; }
+      .aem-card-overlay .aem-cta { padding: .36rem .7rem; font-size: .9rem; }
+    }
+
+  </style>
+
+  <!-- Skip to main (a11y) -->
+  <a class="aem-skip" href="#aem-skip-target">Skip to content</a>
+
+  <script>
+    (function () {
+      function onReady(fn){ if (document.readyState!='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+
+      onReady(() => {
+        // 1) Sticky nav: attach if a <nav> is present
+        const nav = document.querySelector('nav') || document.querySelector('header') || document.querySelector('.site-header') || null;
+        if (nav) {
+          nav.classList.add('aem-sticky');
+          // mark nav logo for entrance if image inside nav exists
+          const logoImg = nav.querySelector('img') || nav.querySelector('.logo') || null;
+          if (logoImg) {
+            if (!logoImg.classList.contains('aem-logo-entrance')) {
+              logoImg.classList.add('aem-logo-entrance');
+            }
+          }
+          const STICKY_THRESHOLD = 80;
+          window.addEventListener('scroll', () => {
+            const y = window.scrollY || window.pageYOffset;
+            if (y > STICKY_THRESHOLD) { nav.classList.add('aem-is-stuck'); }
+            else { nav.classList.remove('aem-is-stuck'); }
+          }, { passive: true });
+        }
+
+        // 2) Reveal-on-scroll: target common section selectors (includes your #home, #services, #blogs, #careers)
+        const revealSelector = 'section, .section, .hero, .brand, .products, .product-list, .content-block, #home, #services, #blogs, #careers';
+        const reveals = Array.from(document.querySelectorAll(revealSelector));
+        if (reveals.length) {
+          const io = new IntersectionObserver((entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('aem-visible');
+                io.unobserve(e.target);
+              }
+            }
+          }, { threshold: 0.15 });
+          reveals.forEach(el => {
+            if (!el.classList.contains('aem-reveal')) el.classList.add('aem-reveal');
+            io.observe(el);
+          });
+        }
+
+        // 3) Lazy images + blur-up: apply to many images but skip nav & preloader logos
+        const images = Array.from(document.querySelectorAll('img'));
+        const imgObserver = new IntersectionObserver((entries, obs) => {
+          for (const ent of entries) {
+            if (!ent.isIntersecting) continue;
+            const img = ent.target;
+            if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+            const ds = img.getAttribute('data-src') || img.getAttribute('data-lazy');
+            if (ds) {
+              img.src = ds;
+            }
+            img.addEventListener('load', () => {
+              img.classList.add('aem-sharp');
+            }, { once: true });
+            obs.unobserve(img);
+          }
+        }, { rootMargin: '200px 0px', threshold: 0.01 });
+
+        images.forEach(img => {
+          // skip nav images and preloader logo
+          if (img.closest('nav')) return;
+          if (img.classList.contains('logo-car')) return;
+          if ((img.alt || '').toLowerCase().includes('logo')) return;
+          // add blur and observe
+          try { img.classList.add('aem-blur'); imgObserver.observe(img); } catch(e){}
+        });
+
+        // 4) Service card overlay CTA: target #scrollContainer children
+        const scrollContainer = document.getElementById('scrollContainer');
+        if (scrollContainer) {
+          const tiles = Array.from(scrollContainer.children);
+          tiles.forEach(tile => {
+            if (!tile || tile.nodeType !== 1) return;
+            if (!tile.classList.contains('aem-card-wrap')) tile.classList.add('aem-card-wrap');
+            if (!tile.querySelector('.aem-card-overlay')) {
+              const overlay = document.createElement('div');
+              overlay.className = 'aem-card-overlay';
+              const cta = document.createElement('a');
+              cta.className = 'aem-cta';
+              cta.textContent = 'Learn More';
+              cta.href = 'services.html';
+              overlay.appendChild(cta);
+              tile.appendChild(overlay);
+            }
+          });
+        }
+
+        // 5) Hero parallax subtle (if #home exists)
+        const hero = document.querySelector('#home');
+        if (hero) {
+          hero.classList.add('aem-hero-parallax');
+          window.addEventListener('scroll', () => {
+            const rect = hero.getBoundingClientRect();
+            const pct = Math.min(Math.max((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0), 1);
+            hero.style.transform = `translateY(${(1-pct) * 8}px)`;
+          }, { passive: true });
+        }
+
+        // 6) Assign ID to skip target (for skip-link)
+        const mainCandidate = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.container') || document.querySelector('.content') || null;
+        if (mainCandidate) mainCandidate.id = mainCandidate.id || 'aem-skip-target';
+
+      });
+    })();
+  </script>
+</div>
+<!-- === End of Enhancement Kit === -->
+
+    <!-- Navigation Bar -->
+
+   <nav class="bg-gray-900 text-white px-6 py-4 shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+            <img src="https://i.postimg.cc/C1jQPkzC/bizzapt-1.png" alt="Bizzapt Logo" class="h-12 w-12 rounded-full shadow-lg">
+            <span class="text-2xl md:text-3xl font-bold font-liham tracking-wide">Bizzapt Enterprises</span>
+        </div>
+
+        <div class="hidden md:flex space-x-10 items-center">
+            <a href="index.html" class="hover:text-gray-400 transition">Home</a>
+            <a href="services.html" target="_blank" class="hover:text-gray-400 transition">Services</a>
+            <a href="solutions.html" target="_blank" class="hover:text-gray-400 transition">Solutions</a>
+            <a href="contactus.html" target="_blank" class="hover:text-gray-400">Contact Us</a>
+            <a href="arabic.html" target="_blank" class="hover:text-gray-400 transition">عربي</a>
+        </div>
+
+        <div class="md:hidden">
+            <button onclick="toggleMenu()" class="text-white">
+                <i class="bi bi-list text-3xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 mt-2 rounded-lg shadow-lg">
+        <a href="#home" class="block px-4 py-2 hover:bg-gray-700">Home</a>
+        <div class="border-t border-gray-700"></div>
+        <a href="services.html" target="_blank" class="block px-4 py-2 hover:bg-gray-700">Services</a>
+        <a href="solutions.html" target="_blank" class="block px-4 py-2 hover:bg-gray-700">Solutions</a>
+        <a href="contactus.html" target="_blank" class="block px-4 py-2 hover:bg-gray-700">Contact Us</a>
+        <button onclick="toggleLanguage()" class="block w-full text-left px-4 py-2 hover:bg-gray-700">عربي</button>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://www.pexels.com/download/video/19102792/" type="video/mp4">
+        </video>
         <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Bizzapt Enterprises</h1>
+                    <p class="text-xl md:text-2xl mb-8">Line of Provisions</p>
+                    <div class="space-x-4">
+                        <a href="services.html" class="bg-white text-green-900 px-8 py-3 rounded-full font-bold hover:bg-green-100 transition duration-300">Explore Services</a>
+                        <a href="contactus.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-green-900 transition duration-300">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Content -->
+  <!-- Services Section -->
+<section id="services" class="py-20 bg-gradient-to-r from-white via-gray-50 to-white overflow-hidden">
     <div class="container mx-auto px-4">
-        <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Bizzapt Enterprises</h1>
-                <p class="text-xl md:text-2xl mb-8">Line of Provisions</p>
-                <div class="space-x-4">
-                    <a href="#services" class="bg-white text-green-900 px-8 py-3 rounded-full font-bold hover:bg-green-100 transition duration-300">Explore Services</a>
-                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-green-900 transition duration-300">Contact Us</a>
+        <h2 class="text-4xl text-center font-bold text-gray-800 mb-12 tracking-wide">Our Services</h2>
+
+        <div class="relative overflow-hidden">
+            <div id="scrollContainer" class="flex space-x-8 animate-scroll">
+                <div class="min-w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <i class="bi bi-shield-lock text-5xl text-green-900 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Cybersecurity</h3>
+                    <p class="text-gray-600 leading-relaxed">Protect your business with advanced, future-proof security solutions.</p>
                 </div>
-            </div>  
+
+                <div class="min-w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <i class="bi bi-cloud text-5xl text-green-900 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Cloud Solutions</h3>
+                    <p class="text-gray-600 leading-relaxed">Reliable and scalable cloud services tailored to your growth.</p>
+                </div>
+
+                <div class="min-w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <i class="bi bi-cpu text-5xl text-green-900 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3">IoT Solutions</h3>
+                    <p class="text-gray-600 leading-relaxed">Connect and manage smart devices efficiently for your operations.</p>
+                </div>
+
+                <div class="min-w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <i class="bi bi-bar-chart-line text-5xl text-green-900 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Data Analytics & BI</h3>
+                    <p class="text-gray-600 leading-relaxed">Extract insights and drive smarter decisions through data.</p>
+                </div>
+
+                <div class="min-w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <i class="bi bi-phone text-5xl text-green-900 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Web & Mobile Apps</h3>
+                    <p class="text-gray-600 leading-relaxed">Modern, scalable apps to power your digital transformation.</p>
+                </div>
+
+                <div class="min-w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <i class="bi bi-hdd-network text-5xl text-green-900 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3">IT Infrastructure</h3>
+                    <p class="text-gray-600 leading-relaxed">Robust infrastructure management for operational excellence.</p>
+                </div>
+
+                <!-- Duplicate to loop seamlessly -->
+                <div class="min-w-[320px] flex-shrink-0 bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <i class="bi bi-shield-lock text-5xl text-green-900 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Cybersecurity</h3>
+                    <p class="text-gray-600 leading-relaxed">Protect your business with advanced, future-proof security solutions.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl text-center font-bold text-gray-800 mb-12">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Cards -->
-                <div class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <i class="bi bi-shield-lock text-4xl text-green-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Cybersecurity</h3>
-                    <p class="text-gray-600">Advanced security solutions to protect your digital assets</p>
-                </div>
-                <div class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <i class="bi bi-cloud text-4xl text-green-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Cloud Solutions</h3>
-                    <p class="text-gray-600">Scalable and secure cloud infrastructure services</p>
-                </div>
-                <div class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
-                    <i class="bi bi-cpu text-4xl text-green-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">IoT Solutions</h3>
-                    <p class="text-gray-600">Smart device integration and management</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<style>
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
 
-    <!-- Careers Section -->
-    <section id="careers" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl text-center font-bold text-gray-800 mb-12">Career Growth & Learning</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold mb-4">Professional Development</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center"><i class="bi bi-check2-circle text-green-900 mr-2"></i>Continuous Learning Programs</li>
-                        <li class="flex items-center"><i class="bi bi-check2-circle text-green-900 mr-2"></i>Mentorship Opportunities</li>
-                        <li class="flex items-center"><i class="bi bi-check2-circle text-green-900 mr-2"></i>Leadership Training</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold mb-4">Benefits & Recognition</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center"><i class="bi bi-check2-circle text-green-900 mr-2"></i>Performance Rewards</li>
-                        <li class="flex items-center"><i class="bi bi-check2-circle text-green-900 mr-2"></i>Educational Assistance</li>
-                        <li class="flex items-center"><i class="bi bi-check2-circle text-green-900 mr-2"></i>Career Advancement</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <button onclick="showJobOpenings()" class="bg-green-900 text-white px-8 py-3 rounded-full font-bold hover:bg-green-800 transition duration-300">View Open Positions</button>
-            </div>
-        </div>
-    </section>
+    .animate-scroll {
+        display: flex;
+        width: max-content;
+        animation: scroll 18s linear infinite;
+    }
+</style>
 
-    
-    <!-- Feedback section -->
-<section id="feedback" class="py-10 bg-gray-100">
-    <div class="container mx-auto px-2">
-        <div class="grid grid-cols-1 md">
-            <!-- Feedback Form -->
-            <div class="bg-white shadow-lg rounded-lg px-4">
-                <h2 class="text-2xl font-bold mb-4 text-center">Share Your Vision</h2>
-                <form action="#" method="POST" class="space-y-1">
-                    <!-- Name Field -->
-                    <div>
-                        <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
-                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter your name" required>
-                    </div>
-                    <!-- Email Field -->
-                    <div>
-                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter your email" required>
-                    </div>
-                    <!-- Feedback Section -->
-                    <div>
-                        <label for="feedback" class="block text-gray-700 font-semibold mb-2">Feedback</label>
-                        <textarea id="feedback" name="feedback" rows="4" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Share your vision with us..." required></textarea>
-                    </div>
-                    <!-- Submit Button -->
-                    <div>
-                        <button type="submit" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition duration-300">
-                            Submit
-                        </button>
-                    </div>
-                </form>
+
+    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<section id="blogs" class="py-20 bg-gradient-to-r from-green-50 via-white to-green-100">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-extrabold text-center text-green-900 mb-12 font-[Poppins]">
+      Latest Blogs
+    </h2>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Blog Card 1 -->
+        <div class="swiper-slide">
+          <div
+            class="max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-transform duration-300 will-change-transform"
+          >
+            <div class="relative overflow-hidden">
+              <img
+              src="https://i.postimg.cc/x16X533y/bizzapt-1.png"
+              alt="Cybersecurity"
+              class="w-full h-52 object-cover rounded-t-2xl transition-transform duration-300 transform hover:scale-105 will-change-transform aem-sharp"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              style="image-rendering: -webkit-optimize-contrast; backface-visibility: hidden; filter: brightness(1.15) contrast(1.06) saturate(1.08);"
+              />
             </div>
-           
+            <div class="p-6 text-center">
+              <span
+                class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full mb-3"
+                >Technology</span
+              >
+              <h3 class="text-xl font-bold mb-2 text-gray-800">
+                Importance of Cybersecurity
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Why modern businesses can't ignore cybersecurity in 2024...
+              </p>
+              <a
+                href="blog1.html"
+                class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-full shadow-md transition duration-300"
+                >Read Blog</a
+              >
+            </div>
+          </div>
         </div>
+
+        <!-- Blog Card 2 -->
+        <div class="swiper-slide">
+          <div
+            class="max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-transform duration-300 will-change-transform"
+          >
+            <div class="relative overflow-hidden">
+              <img
+              src="https://i.postimg.cc/WbGdxvTn/bizzapt.jpg"
+              alt="Cloud Solutions"
+              class="w-full h-52 object-cover rounded-t-2xl transition-transform duration-300 transform hover:scale-105 will-change-transform aem-sharp"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              style="image-rendering: -webkit-optimize-contrast; backface-visibility: hidden; filter: brightness(1.05) contrast(1.12) saturate(1.08);"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <span
+                class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-3"
+                >Cloud</span
+              >
+              <h3 class="text-xl font-bold mb-2 text-gray-800">
+                Cloud Solutions for Business
+              </h3>
+              <p class="text-gray-600 mb-4">
+                How cloud technologies can help scale your enterprise...
+              </p>
+              <a
+                href="blog2.html"
+                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow-md transition duration-300"
+                >Read Blog</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="swiper-slide">
+          <div
+            class="max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-transform duration-300 will-change-transform"
+          >
+            <div class="relative overflow-hidden">
+              <img
+              src="https://i.postimg.cc/wvwVXmb1/bizzapt-2.png"
+              alt="IoT"
+              class="w-full h-52 object-cover rounded-t-2xl transition-transform duration-300 transform hover:scale-105 will-change-transform aem-sharp"
+              loading="eager"
+              decoding="async"
+              style="image-rendering: -webkit-optimize-contrast; backface-visibility: hidden; filter: brightness(1.05) contrast(1.06) !important;"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <span
+                class="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full mb-3"
+                >Innovation</span
+              >
+              <h3 class="text-xl font-bold mb-2 text-gray-800">
+                IoT - Connecting Everything
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Discover how IoT is shaping the future of industries...
+              </p>
+              <a
+                href="blog3.html"
+                class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-5 py-2 rounded-full shadow-md transition duration-300"
+                >Read Blog</a
+              >
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Swiper Controls -->
+      <div class="swiper-pagination mt-6"></div>
+      <div class="swiper-button-next text-green-700"></div>
+      <div class="swiper-button-prev text-green-700"></div>
     </div>
+  </div>
 </section>
- 
-<!--Globe -->
-<section id="locations">
-    <div class="flex justify-center items-center" style="height: 400px; color: #066132;">
-        <div id="map" style="height: 100%; width: 80%;"></div>
-    </div></div>
 
-    <!-- Leaflet.js CSS -->
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: true,
+    autoplay: { delay: 3500, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
+  });
+</script>
+
+    <!--Solutions Section -->
+    <section id="solutions" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 tracking-wide">Our Solutions</h2>
+           <!-- Solutions Cards -->
+    <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-6 py-8 md:py-10">
+        <!-- Card 1 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://tinyurl.com/2a45c9h2');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">System, Storage, and Cloud Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Helping clients adapt to business needs faster and more securely.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Infrastructure Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Comprehensive IT infrastructure from start to finish.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Data Center Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Experts in next-gen data center design & implementation.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Network Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Comprehensive & secure networking solutions for your enterprise.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Virtualization Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Efficiently run multiple operating systems on a single machine.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Enterprise Integration Solutions</h2>
+                <p class="text-gray-200 text-sm mt-2">Connecting systems to work seamlessly as one.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+        <!-- Card 7 -->
+        <div class="rounded-xl shadow-lg overflow-hidden tech-bg min-h-[260px] flex" style="background-image: url('https://tinyurl.com/yyfhha4n');">
+            <div class="bg-black bg-opacity-60 h-full w-full p-6 flex flex-col justify-between">
+                <h2 class="text-lg md:text-xl font-bold text-white">Cybersecurity</h2>
+                <p class="text-gray-200 text-sm mt-2">Protecting digital systems, networks, and data from threats.</p>
+                <a href="#" class="inline-block mt-4 text-blue-400 hover:text-blue-200">See More →</a>
+            </div>
+        </div>
+    </section>
+        </div>
+    </section>
+    </section>
+
+   <!-- Footer -->
+<footer class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
+        <div class="flex justify-center items-center py-6">
+            <img src="https://i.postimg.cc/hGRg0fR9/Whats-App-Image-2025-07-18-at-22-44-21-29c01807.jpg" alt="Bizzapt Logo" class="h-28 w-48 shadow-2xl border-4 border-white object-cover rounded-none">
+        </div>
+        <div>
+            <h4 class="font-bold mb-3 text-lg">Quick Links</h4>
+            <ul class="space-y-1">
+                <li><a href="#home" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#services" class="hover:text-gray-300">Services</a></li>
+                <li><a href="#solutions" class="hover:text-gray-300">Solutions</a></li>
+                <li><a href="#blogs1.html" class="hover:text-gray-300">Blogs</a></li>
+                <li><a href="contactus.html" class="hover:text-gray-300">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-3 text-lg">Connect</h4>
+            <div class="flex space-x-3">
+                <a href="https://www.linkedin.com/in/rayeesa-mahmood/" class="hover:text-gray-300"><i class="bi bi-linkedin text-lg"></i></a>
+                <a href="https://www.linkedin.com/in/reda-kaleem/" class="hover:text-gray-300"><i class="bi bi-twitter text-lg"></i></a>
+                <a href="" class="hover:text-gray-300"><i class="bi bi-facebook text-lg"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="font-bold mb-3 text-lg"></h4>
+            <div id="map" class="rounded-md overflow-hidden" style="height: 150px; width: 100%;"></div>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var map = L.map('map').setView([25.276987, 55.296249], 4); // Centered to show all locations
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(map);
+
+                // Riyadh
+                L.marker([24.713552, 46.675297]).addTo(map)
+                    .bindPopup('Bizzapt Enterprises - Riyadh');
+
+                // Hyderabad
+                L.marker([17.385044, 78.486671]).addTo(map)
+                    .bindPopup('Bizzapt Enterprises - Hyderabad');
+            });
+            </script>
+        </div>
+        
+    </div>
+    <div class="border-t border-gray-700 mt-6 pt-3 text-center text-xs text-gray-400">
+    Developed by Rayeesa Mahmood and Reda Kaleem
+    </div>
+</footer>
+<script src="script.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-    <!-- Leaflet.js JavaScript -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-        // Custom green marker icon
-        const greenIcon = L.icon({
-            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-            iconSize: [25, 41], // size of the icon
-            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
-            popupAnchor: [1, -34], // point from which the popup should open relative to the iconAnchor
-            shadowSize: [41, 41] // size of the shadow
-        });
+    <script src="script.js"></script>
+    <!-- GSAP + Barba JS -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
 
-        // Initialize the map
-        const map = L.map('map').setView([23.6345, 53.8478], 4); // Map center (Lat, Lon) and zoom level
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-        // Add a tile layer (OpenStreetMap)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+  // --- Barba Initialization ---
+  barba.init({
+    transitions: [
+      {
+        name: "fade",
+        leave(data) {
+          return gsap.to(data.current.container, {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.inOut"
+          });
+        },
+        enter(data) {
+          gsap.from(data.next.container, {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.inOut"
+          });
+        }
+      }
+    ],
+    views: [
+      {
+        namespace: "solutions",
+        afterEnter() {
+          animateSolutions();
+        }
+      }
+    ]
+  });
 
-        // Define office locations
-        const locations = [
-            { name: "Riyadh Office", coords: [24.7136, 46.6753] },
-            { name: "Dubai Office", coords: [25.276987, 55.296249] },
-            { name: "Hyderabad Office", coords: [17.385044, 78.486671] }
-        ];
+  // --- GSAP Animation for Cards ---
+  function animateSolutions() {
+    const cards = document.querySelectorAll("#solutions .rounded-xl");
+    gsap.from(cards, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  }
 
-        // Add green markers for each location
-        locations.forEach(location => {
-            L.marker(location.coords, { icon: greenIcon }).addTo(map)
-                .bindPopup(`<b>${location.name}</b>`);
-        });
-        L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-}).addTo(map);
+  // --- Parallax Hover Effect on Cards ---
+  const solutionCards = document.querySelectorAll(".tech-bg");
+  solutionCards.forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.backgroundPosition = `${x / 20 + 50}% ${y / 20 + 50}%`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.backgroundPosition = "center";
+    });
+  });
 
-    </script>
-</section>
+  // Initial animation when page loads
+  animateSolutions();
 
+});
+</script>
 
-<!-- Footer -->
-    <footer class="bg-green-900 text-white py-10">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h4 class="font-bold mb-4">Bizzapt Enterprises</h4>
-                    <p class="text-sm">Line of Provisions</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="hover:text-gray-300">Home</a></li>
-                        <li><a href="#services" class="hover:text-gray-300">Services</a></li>
-                        <li><a href="#careers" class="hover:text-gray-300">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/bizzapt-enterprises/" class="hover:text-gray-300"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="hover:text-gray-300"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="hover:text-gray-300"><i class="bi bi-facebook"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">Contact</h4>
-                    <p class="text-sm">Email: info@bizzaptEnterprises.com</p>
-                    <p class="text-sm">Phone: +966 000 000 000</p>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-sm">&copy; 2024 Bizzapt Enterprises. All rights reserved.</p>
-            </div>
-        </div>
-    </footer> 
 </body>
 </html>
